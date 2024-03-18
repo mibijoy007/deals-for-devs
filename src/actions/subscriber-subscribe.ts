@@ -9,8 +9,13 @@ const subscribeSchema = z.object({
   email: z.string().email(),
 })
 
+//function to wait a number of seconds
+const wait = (seconds: number) =>
+  new Promise((resolve) => setTimeout(resolve, seconds * 1000))
+
 export const subscribe = async (formData: FormData) => {
   try {
+    await wait(2)
     const token = uuidv4()
 
     // parse the email
