@@ -16,7 +16,7 @@ const wait = (seconds: number) =>
 
 export const subscribe = async (formData: FormData) => {
   try {
-    await wait(2)
+    // await wait(2)
     const token = uuidv4()
 
     // parse the email

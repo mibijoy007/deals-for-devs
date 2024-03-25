@@ -10,6 +10,14 @@ export default function SubscribeForm() {
     <form
       id="subscribe-form"
       action={async (formData) => {
+        //sum all numbers up to 10 billion
+        //should take a long time!
+        console.log('starting')
+        let sum = 0
+        for (let i = 0; i < 10_000_000_000; i++) {
+          sum += i
+        }
+        console.log('ending')
         const { data: token, error } = await subscribe(formData)
         if (error) {
           console.error(error)
